@@ -8,7 +8,7 @@ import { setUpdatedUser } from '../redux/features/authSlice';
 
 export default function Home() {
   const dispatch = useDispatch()
-  const { homeCurrentPage,animesQuery,homeNumberOfPages} = useSelector(state => state.anime)
+  const { homeCurrentPage,animesQuery,homeNumberOfPages,loading} = useSelector(state => state.anime)
   const postPerPage = 8
   const lastPostIndex = homeCurrentPage * postPerPage
   const firstsPostIndex = lastPostIndex - postPerPage
@@ -27,7 +27,20 @@ export default function Home() {
  
 
 
-  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center space-x-2">
+        <div
+          className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-danger motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          role="status"
+        >
+          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+            Loading...
+          </span>
+        </div>
+      </div>
+    );
+  }
 
   
   return (

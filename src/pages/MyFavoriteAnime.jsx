@@ -67,6 +67,21 @@ export default function MyFavoriteAnime() {
     setTopTierState(result);
   }, [state?.bestAnime, arrayValue]);
 
+  if (state.loading) {
+    return (
+      <div className="flex items-center justify-center space-x-2">
+        <div
+          className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-danger motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          role="status"
+        >
+          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+            Loading...
+          </span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-screen h-screen flex flex-col bg-[#161623]">
       <div className="flex justify-center my-10">
@@ -87,7 +102,7 @@ export default function MyFavoriteAnime() {
         </h1>
       </div>
 
-      <div className="flex flex-col ">
+      <div className="flex flex-col body_">
         <div className="lg:grid lg:grid-cols-5 md:grid md:grid-cols-3 flex flex-col mb-20 border-b-2 ">
           {topTierState?.map((item, index) => (
             <Tilt key={index}>

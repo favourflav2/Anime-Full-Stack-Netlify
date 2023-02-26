@@ -48,7 +48,7 @@ export default function AnimePage() {
 
   return (
     
-    <div className="w-screen h-screen  grid-cols-[200px_1fr] grid">
+    <div className="w-screen h-screen  grid-cols-[200px_1fr] grid bg-[#161623]">
       <div className="bg-[#2a2a35] border-r-2 border-gray-400 flex flex-col ">
 
       <h3 className="text-xl font-extrabold my-4 flex items-center justify-center">Top Animes Now</h3>
@@ -57,7 +57,7 @@ export default function AnimePage() {
            <Sidebar key={index} {...item} />
         ))}
       </div>
-      <div className=" flex flex-col body_">
+      <div className=" flex flex-col h-[100%] w-[100%] bg-[#161623] ">
         <AnimeMain  />
 
         <div className="lg:grid lg:grid-cols-4 md:grid md:grid-cols-2 flex flex-col">

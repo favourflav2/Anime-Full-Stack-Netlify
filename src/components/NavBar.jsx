@@ -83,6 +83,14 @@ export default function NavBar() {
               </Link>
               </li>
 
+              <li>
+            <Link to='/anime'>
+              <button className="lg:px-5 sm:max-md:ml-3 sm:max-md:mt-3 py-2 block hover:text-blue-700 font-semibold">
+                Search For Anime
+              </button>
+              </Link>
+            </li>
+
              <li>
             <Link to='/signup'>
               <button className="lg:px-5 sm:max-md:ml-3 sm:max-md:mt-3 py-2 block hover:text-blue-700 font-semibold">
